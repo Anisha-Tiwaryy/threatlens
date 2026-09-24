@@ -1,0 +1,33 @@
+@use "sass:map";
+@use "../styles/abstracts" as *;
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: space(3);
+  margin-bottom: space(4);
+
+  @include respond-below($breakpoint-md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.tile {
+  @include card;
+  padding: space(3) space(4);
+}
+
+.label {
+  color: $color-muted;
+  font-size: 12px;
+}
+
+.value {
+  font-size: 24px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.danger {
+  color: map.get($severity-colors, critical);
+}

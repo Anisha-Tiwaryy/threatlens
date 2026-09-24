@@ -1,0 +1,75 @@
+// Global layout uses BEM naming: block "app", elements "app__*", modifiers "app__*--*".
+@use "../abstracts" as *;
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: space(5);
+
+  @include respond-below($breakpoint-md) {
+    padding: space(3);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: space(4);
+    margin-bottom: space(5);
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: $color-muted;
+    font-size: 13px;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: space(4);
+    align-items: start;
+
+    &--single {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    @include respond-below($breakpoint-md) {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+}
+
+.button {
+  @include card;
+  padding: space(2) space(3);
+  background: $color-surface-2;
+  transition: border-color 0.15s ease;
+
+  &:hover:not(:disabled) {
+    border-color: $color-accent;
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+  }
+
+  &--primary {
+    background: $color-accent;
+    border-color: $color-accent;
+    color: #fff;
+  }
+
+  &--small {
+    padding: 2px space(2);
+    font-size: 12px;
+  }
+}

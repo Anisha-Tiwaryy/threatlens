@@ -1,0 +1,52 @@
+@use "sass:map";
+@use "../styles/abstracts" as *;
+
+.bar {
+  @include card;
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(3);
+  align-items: center;
+  padding: space(3);
+  margin-bottom: space(3);
+}
+
+.search {
+  flex: 1 1 260px;
+  padding: space(2) space(3);
+  background: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+}
+
+.chips {
+  display: flex;
+  gap: space(1);
+}
+
+.chip {
+  padding: 2px space(2);
+  border-radius: 999px;
+  border: 1px solid $color-border;
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 12px;
+
+  &[aria-pressed="true"] {
+    background: $color-surface-2;
+    border-color: $color-accent;
+  }
+}
+
+.select {
+  padding: space(1) space(2);
+  background: $color-bg;
+  border: 1px solid $color-border;
+  border-radius: $radius;
+}
+
+.count {
+  color: $color-muted;
+  font-size: 12px;
+  margin-left: auto;
+}

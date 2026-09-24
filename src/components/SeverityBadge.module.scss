@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "../styles/abstracts" as *;
+
+.badge {
+  text-transform: capitalize;
+}
+
+// Generates .critical, .high, .medium, .low from the token map.
+@each $name, $color in $severity-colors {
+  .#{$name} {
+    @include pill($color);
+  }
+}
+
+@each $name, $color in $status-colors {
+  .status-#{$name} {
+    @include pill($color);
+  }
+}

@@ -1,0 +1,27 @@
+// Design tokens. Every colour, space and radius in the app comes from here.
+$color-bg: #0e1117;
+$color-surface: #161b22;
+$color-surface-2: #1f2630;
+$color-border: #2b3440;
+$color-text: #e6edf3;
+$color-muted: #8b98a8;
+$color-accent: #4f8cff;
+
+$severity-colors: (
+  critical: #ff4d5e,
+  high: #ff9f43,
+  medium: #f5cd47,
+  low: #4cc38a,
+);
+
+$status-colors: (
+  open: #4f8cff,
+  acknowledged: #b48cff,
+  resolved: #4cc38a,
+  false_positive: #8b98a8,
+);
+
+$space: (1: 4px, 2: 8px, 3: 12px, 4: 16px, 5: 24px, 6: 32px);
+$radius: 8px;
+$font-stack: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$breakpoint-md: 900px;

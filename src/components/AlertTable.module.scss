@@ -1,0 +1,63 @@
+@use "../styles/abstracts" as *;
+
+.wrap {
+  @include card;
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th,
+  td {
+    padding: space(2) space(3);
+    text-align: left;
+    border-bottom: 1px solid $color-border;
+    white-space: nowrap;
+  }
+
+  th {
+    font-size: 12px;
+    font-weight: 600;
+    color: $color-muted;
+    background: $color-surface-2;
+    position: sticky;
+    top: 0;
+  }
+}
+
+.row {
+  cursor: pointer;
+
+  &:hover {
+    background: rgba($color-accent, 0.06);
+  }
+}
+
+.active {
+  background: rgba($color-accent, 0.12);
+  box-shadow: inset 3px 0 0 $color-accent;
+}
+
+.title {
+  white-space: normal !important;
+  min-width: 260px;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  color: $color-muted;
+}
+
+.risk {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.empty {
+  padding: space(6);
+  text-align: center;
+  color: $color-muted;
+}
